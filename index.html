@@ -6,143 +6,141 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-    body {
+    body{
       margin:0;
-      font-family:"Noto Sans TC", -apple-system, BlinkMacSystemFont, sans-serif;
-      background:#0f172a;
-      color:#e5e7eb;
+      font-family:"Noto Sans TC",-apple-system,BlinkMacSystemFont,sans-serif;
+      background:#f8fafc;
+      color:#1f2937;
       line-height:1.8;
     }
 
-    a { color:inherit; text-decoration:none; }
+    a{color:inherit;text-decoration:none;}
 
-    /* Navbar */
-    nav {
+    /* ===== Navbar ===== */
+    nav{
       position:fixed;
-      top:0; left:0; right:0;
+      top:0;left:0;right:0;
+      background:#ffffff;
+      border-bottom:1px solid #e5e7eb;
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding:18px 40px;
-      background:rgba(15,23,42,.9);
-      backdrop-filter:blur(8px);
+      padding:14px 40px;
       z-index:1000;
     }
 
-    nav strong { font-size:16px; }
-
-    nav .menu a {
-      margin-left:26px;
+    nav strong{font-size:16px;font-weight:700;}
+    nav .menu a{
+      margin-left:24px;
       font-size:15px;
-      opacity:.85;
+      color:#374151;
     }
 
-    nav .menu a:hover { opacity:1; }
+    .btn{
+      background:#1f2937;
+      color:#fff;
+      padding:8px 16px;
+      border-radius:6px;
+      font-size:14px;
+    }
 
-    /* Hero */
-    header {
-      min-height:100vh;
+    /* ===== Layout ===== */
+    header{
+      padding:140px 20px 80px;
+      text-align:center;
+      background:#ffffff;
+    }
+
+    header h1{font-size:36px;margin-bottom:10px;}
+    header p{color:#6b7280;}
+
+    section{
+      max-width:1100px;
+      margin:auto;
+      padding:80px 24px;
+    }
+
+    h2{
+      text-align:center;
+      font-size:30px;
+      margin-bottom:20px;
+    }
+
+    .subtitle{
+      text-align:center;
+      color:#6b7280;
+      margin-bottom:50px;
+    }
+
+    /* ===== Cards ===== */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:28px;
+    }
+
+    .card{
+      background:#ffffff;
+      border-radius:16px;
+      padding:32px;
+      border:1px solid #e5e7eb;
+      box-shadow:0 10px 20px rgba(0,0,0,.04);
+    }
+
+    /* ===== Process ===== */
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+      gap:30px;
+      text-align:center;
+    }
+
+    .step-circle{
+      width:56px;
+      height:56px;
+      margin:0 auto 12px;
+      border-radius:50%;
+      background:#1f2937;
+      color:#fff;
       display:flex;
       align-items:center;
       justify-content:center;
-      text-align:center;
-      padding:140px 20px 80px;
-      background:
-        radial-gradient(circle at top, rgba(148,163,184,.18), transparent 60%);
+      font-weight:700;
     }
 
-    header h1 {
-      font-size:48px;
-      margin-bottom:18px;
-      letter-spacing:2px;
-    }
-
-    header p {
-      font-size:18px;
-      opacity:.9;
-      margin-bottom:40px;
-    }
-
-    .tagline {
-      display:inline-block;
-      margin-bottom:16px;
-      padding:6px 16px;
-      border-radius:999px;
-      background:rgba(199,161,74,.15);
-      color:#c7a14a;
-      font-size:14px;
-    }
-
-    .cta {
-      display:inline-block;
-      margin:0 10px;
-      padding:14px 34px;
-      border-radius:999px;
-      font-size:15px;
-      transition:.3s;
-    }
-
-    .cta.primary {
-      background:#c7a14a;
-      color:#111;
-    }
-
-    .cta.secondary {
-      border:1px solid #94a3b8;
-    }
-
-    .cta:hover { transform:translateY(-2px); }
-
-    section {
-      max-width:1100px;
-      margin:auto;
-      padding:90px 24px;
-    }
-
-    h2 {
-      font-size:30px;
-      margin-bottom:30px;
-      color:#f8fafc;
-    }
-
-    .card {
-      background:#020617;
-      border:1px solid rgba(148,163,184,.15);
-      border-radius:18px;
-      padding:36px;
-    }
-
-    .grid {
+    /* ===== Contact ===== */
+    .contact-box{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:26px;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
     }
 
-    .service {
-      padding:26px;
-      border-radius:16px;
-      background:#020617;
-      border:1px solid rgba(148,163,184,.15);
-      transition:.3s;
-    }
-
-    .service:hover {
-      transform:translateY(-6px);
-      border-color:#c7a14a;
-    }
-
-    .price-item {
-      border-top:1px solid rgba(148,163,184,.15);
-      padding-top:18px;
-      margin-top:18px;
-    }
-
-    footer {
-      background:#020617;
-      text-align:center;
-      padding:50px 20px;
+    input,textarea{
+      width:100%;
+      padding:12px;
+      border-radius:6px;
+      border:1px solid #d1d5db;
       font-size:14px;
-      color:#94a3b8;
+      margin-bottom:12px;
+    }
+
+    textarea{min-height:120px;}
+
+    /* ===== Footer ===== */
+    footer{
+      background:#1f2937;
+      color:#cbd5f5;
+      padding:50px 20px;
+      margin-top:80px;
+    }
+
+    footer .grid{grid-template-columns:2fr 1fr 1fr;}
+    footer h4{margin-bottom:12px;color:#fff;}
+
+    @media(max-width:768px){
+      nav{padding:14px 20px;}
+      .contact-box{grid-template-columns:1fr;}
+      footer .grid{grid-template-columns:1fr;}
     }
   </style>
 </head>
@@ -154,82 +152,86 @@
   <div class="menu">
     <a href="#about">關於我們</a>
     <a href="#services">服務項目</a>
-    <a href="#pricing">費用說明</a>
-    <a href="#contact">聯絡我們</a>
+    <a href="#process">辦理流程</a>
+    <a href="#contact" class="btn">立即諮詢</a>
   </div>
 </nav>
 
 <header>
-  <div>
-    <div class="tagline">專業誠信・值得信賴</div>
-    <h1>筑邦地政事務所</h1>
-    <p>專業地政士｜不動產・繼承・贈與</p>
-    <a href="#contact" class="cta primary">立即聯絡我們</a>
-    <a href="#services" class="cta secondary">了解服務項目</a>
-  </div>
+  <h1>筑邦地政事務所</h1>
+  <p>專業地政士｜不動產・繼承・贈與</p>
 </header>
 
 <section id="about">
   <h2>關於我們</h2>
+  <p class="subtitle">專業、誠信、效率，讓您安心完成每一項登記</p>
   <div class="card">
-    <p>
-      筑邦地政事務所由地政士 <strong>王順堂</strong> 主持，
-      畢業於國立台灣師範大學碩士，曾任後備司令部上校，
-      具備豐富的地政與行政實務經驗。
-    </p>
-    <p>
-      本所秉持 <strong>專業、誠信</strong> 之原則，
-      依個案需求提供清楚、安心且具可執行性的地政服務。
-    </p>
+    筑邦地政事務所由地政士 <strong>王順堂</strong> 主持，
+    畢業於國立台灣師範大學碩士，曾任後備司令部上校，
+    具備豐富的地政與行政實務經驗。
   </div>
 </section>
 
 <section id="services">
   <h2>服務項目</h2>
+  <p class="subtitle">提供完整不動產與地政登記服務</p>
   <div class="grid">
-    <div class="service">土地・房屋買賣登記</div>
-    <div class="service">抵押權設定與塗銷</div>
-    <div class="service">贈與、繼承登記</div>
-    <div class="service">債權執行相關協助</div>
-    <div class="service">代書書狀與文件整理</div>
-    <div class="service">動產抵押與其他委任</div>
-    <div class="service">客製化地政服務</div>
+    <div class="card">不動產買賣登記</div>
+    <div class="card">繼承與分割登記</div>
+    <div class="card">贈與登記與規劃</div>
+    <div class="card">抵押權設定</div>
+    <div class="card">書狀文件代辦</div>
+    <div class="card">其他地政委任</div>
   </div>
 </section>
 
-<section id="pricing">
-  <h2>費用說明</h2>
-  <div class="card">
-    <p><strong>一般成屋簽約手續費</strong>：1,000 NTD / 次</p>
-    <p>* 以簽約人數計算，雙北、桃園以外地區酌收車馬費</p>
-
-    <div class="price-item">
-      <p><strong>預售屋換約簽約手續費</strong>：3,000 NTD / 次</p>
-      <p>* 陪同至建商處換約者，另加收 3,000 元</p>
-    </div>
-
-    <div class="price-item">
-      <p><strong>房地移轉登記（買賣／贈與）</strong>：14,000 NTD / 次</p>
-      <p>* 含一筆土地一筆建物，登記一人</p>
-    </div>
-
-    <div class="price-item">
-      <p><strong>單筆土地或建物移轉</strong>：12,000 NTD / 次</p>
-    </div>
+<section id="process">
+  <h2>辦理流程</h2>
+  <p class="subtitle">五個步驟，讓流程清楚透明</p>
+  <div class="steps">
+    <div><div class="step-circle">01</div>初步諮詢</div>
+    <div><div class="step-circle">02</div>文件審查</div>
+    <div><div class="step-circle">03</div>簽署委任</div>
+    <div><div class="step-circle">04</div>送件辦理</div>
+    <div><div class="step-circle">05</div>完成交付</div>
   </div>
 </section>
 
 <section id="contact">
   <h2>聯絡我們</h2>
-  <div class="card">
-    <p>📍 臺北市士林區忠誠路二段10巷27弄8號</p>
-    <p>📞 +886 988 218 256</p>
-    <p>📧 l2000021227@yahoo.com.tw</p>
+  <div class="contact-box">
+    <div class="card">
+      <p>📍 台北市士林區忠誠路二段10巷27弄8號</p>
+      <p>📞 0988-218-256</p>
+      <p>📧 l2000021227@yahoo.com.tw</p>
+      <p>🕘 週一至週五 09:00–18:00</p>
+    </div>
+
+    <div class="card">
+      <input placeholder="姓名">
+      <input placeholder="電話">
+      <input placeholder="Email">
+      <textarea placeholder="請簡述您的需求"></textarea>
+      <a class="btn" href="#">確認送出</a>
+    </div>
   </div>
 </section>
 
 <footer>
-  © 筑邦地政事務所
+  <div class="grid">
+    <div>
+      <h4>筑邦地政事務所</h4>
+      <p>專業地政登記服務，守護您的不動產權益。</p>
+    </div>
+    <div>
+      <h4>服務項目</h4>
+      <p>買賣・繼承・贈與・抵押</p>
+    </div>
+    <div>
+      <h4>聯絡資訊</h4>
+      <p>台北士林<br>0988-218-256</p>
+    </div>
+  </div>
 </footer>
 
 </body>

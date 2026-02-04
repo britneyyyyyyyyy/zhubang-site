@@ -6,141 +6,173 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-    body{
-      margin:0;
-      font-family:"Noto Sans TC",-apple-system,BlinkMacSystemFont,sans-serif;
-      background:#f8fafc;
-      color:#1f2937;
-      line-height:1.8;
+    :root {
+      --bg-dark: #0f172a;
+      --bg-card: #ffffff;
+      --text-dark: #0f172a;
+      --text-muted: #64748b;
+      --primary: #1f2937;
+      --accent: #c7a14a;
+      --border: #e5e7eb;
     }
 
-    a{color:inherit;text-decoration:none;}
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+
+    a { text-decoration: none; color: inherit; }
 
     /* ===== Navbar ===== */
-    nav{
-      position:fixed;
-      top:0;left:0;right:0;
-      background:#ffffff;
-      border-bottom:1px solid #e5e7eb;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:14px 40px;
-      z-index:1000;
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+      z-index: 1000;
     }
 
-    nav strong{font-size:16px;font-weight:700;}
-    nav .menu a{
-      margin-left:24px;
-      font-size:15px;
-      color:#374151;
+    nav strong {
+      font-size: 18px;
+      letter-spacing: .5px;
     }
 
-    .btn{
-      background:#1f2937;
-      color:#fff;
-      padding:8px 16px;
-      border-radius:6px;
-      font-size:14px;
+    nav .menu a {
+      margin-left: 28px;
+      font-size: 15px;
+      color: #334155;
     }
 
-    /* ===== Layout ===== */
-    header{
-      padding:140px 20px 80px;
-      text-align:center;
-      background:#ffffff;
+    nav .menu a:hover {
+      color: #000;
     }
 
-    header h1{font-size:36px;margin-bottom:10px;}
-    header p{color:#6b7280;}
-
-    section{
-      max-width:1100px;
-      margin:auto;
-      padding:80px 24px;
+    /* ===== Hero ===== */
+    header {
+      padding: 160px 20px 120px;
+      text-align: center;
+      color: #f8fafc;
     }
 
-    h2{
-      text-align:center;
-      font-size:30px;
-      margin-bottom:20px;
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 14px;
+      letter-spacing: 2px;
     }
 
-    .subtitle{
-      text-align:center;
-      color:#6b7280;
-      margin-bottom:50px;
+    header p {
+      font-size: 18px;
+      opacity: .9;
+      margin-bottom: 36px;
     }
 
-    /* ===== Cards ===== */
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:28px;
+    .cta {
+      display: inline-block;
+      padding: 14px 36px;
+      border-radius: 999px;
+      background: #1f2937;
+      color: #fff;
+      font-size: 15px;
+      transition: .3s;
     }
 
-    .card{
-      background:#ffffff;
-      border-radius:16px;
-      padding:32px;
-      border:1px solid #e5e7eb;
-      box-shadow:0 10px 20px rgba(0,0,0,.04);
+    .cta:hover {
+      transform: translateY(-2px);
+      opacity: .9;
     }
 
-    /* ===== Process ===== */
-    .steps{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-      gap:30px;
-      text-align:center;
+    /* ===== Sections ===== */
+    section {
+      max-width: 1100px;
+      margin: 0 auto 80px;
+      padding: 0 20px;
     }
 
-    .step-circle{
-      width:56px;
-      height:56px;
-      margin:0 auto 12px;
-      border-radius:50%;
-      background:#1f2937;
-      color:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:700;
+    .card {
+      background: var(--bg-card);
+      border-radius: 22px;
+      padding: 60px;
+      box-shadow: 0 30px 80px rgba(15,23,42,.12);
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    /* ===== About ===== */
+    #about p {
+      font-size: 16px;
+      color: #334155;
+      margin-bottom: 20px;
+    }
+
+    /* ===== Services ===== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+      gap: 24px;
+    }
+
+    .service {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      text-align: center;
+      font-size: 15px;
+      transition: .3s;
+      background: #fff;
+    }
+
+    .service:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0,0,0,.08);
+    }
+
+    /* ===== Pricing ===== */
+    #pricing p {
+      font-size: 15px;
+      color: #334155;
+      margin-bottom: 10px;
+    }
+
+    .price-item {
+      border-top: 1px solid var(--border);
+      margin-top: 20px;
+      padding-top: 20px;
     }
 
     /* ===== Contact ===== */
-    .contact-box{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:40px;
+    #contact p {
+      font-size: 15px;
+      color: #334155;
+      margin-bottom: 10px;
     }
-
-    input,textarea{
-      width:100%;
-      padding:12px;
-      border-radius:6px;
-      border:1px solid #d1d5db;
-      font-size:14px;
-      margin-bottom:12px;
-    }
-
-    textarea{min-height:120px;}
 
     /* ===== Footer ===== */
-    footer{
-      background:#1f2937;
-      color:#cbd5f5;
-      padding:50px 20px;
-      margin-top:80px;
+    footer {
+      background: #020617;
+      color: #94a3b8;
+      text-align: center;
+      padding: 50px 20px;
+      font-size: 14px;
     }
 
-    footer .grid{grid-template-columns:2fr 1fr 1fr;}
-    footer h4{margin-bottom:12px;color:#fff;}
-
-    @media(max-width:768px){
-      nav{padding:14px 20px;}
-      .contact-box{grid-template-columns:1fr;}
-      footer .grid{grid-template-columns:1fr;}
+    @media (max-width: 640px) {
+      nav { padding: 14px 20px; }
+      nav .menu { display: none; }
+      .card { padding: 36px; }
+      header h1 { font-size: 36px; }
     }
   </style>
 </head>
@@ -152,86 +184,74 @@
   <div class="menu">
     <a href="#about">關於我們</a>
     <a href="#services">服務項目</a>
-    <a href="#process">辦理流程</a>
-    <a href="#contact" class="btn">立即諮詢</a>
+    <a href="#pricing">費用說明</a>
+    <a href="#contact">聯絡我們</a>
   </div>
 </nav>
 
 <header>
   <h1>筑邦地政事務所</h1>
   <p>專業地政士｜不動產・繼承・贈與</p>
+  <a href="#contact" class="cta">立即聯絡我們</a>
 </header>
 
 <section id="about">
-  <h2>關於我們</h2>
-  <p class="subtitle">專業、誠信、效率，讓您安心完成每一項登記</p>
   <div class="card">
-    筑邦地政事務所由地政士 <strong>王順堂</strong> 主持，
-    畢業於國立台灣師範大學碩士，曾任後備司令部上校，
-    具備豐富的地政與行政實務經驗。
+    <h2>關於我們</h2>
+    <p>
+      筑邦地政事務所由地政士 <strong>王順堂</strong> 主持，
+      畢業於國立台灣師範大學碩士，曾任後備司令部上校，
+      具備豐富地政與行政實務經驗。
+    </p>
+    <p>
+      本所秉持專業、誠信、效率之原則，
+      為客戶提供安心、透明、可執行的地政服務。
+    </p>
   </div>
 </section>
 
 <section id="services">
-  <h2>服務項目</h2>
-  <p class="subtitle">提供完整不動產與地政登記服務</p>
-  <div class="grid">
-    <div class="card">不動產買賣登記</div>
-    <div class="card">繼承與分割登記</div>
-    <div class="card">贈與登記與規劃</div>
-    <div class="card">抵押權設定</div>
-    <div class="card">書狀文件代辦</div>
-    <div class="card">其他地政委任</div>
+  <div class="card">
+    <h2>服務項目</h2>
+    <div class="grid">
+      <div class="service">土地・房屋買賣登記</div>
+      <div class="service">抵押權設定與塗銷</div>
+      <div class="service">贈與、繼承登記</div>
+      <div class="service">債權執行相關協助</div>
+      <div class="service">代書書狀與文件整理</div>
+      <div class="service">客製化地政服務</div>
+    </div>
   </div>
 </section>
 
-<section id="process">
-  <h2>辦理流程</h2>
-  <p class="subtitle">五個步驟，讓流程清楚透明</p>
-  <div class="steps">
-    <div><div class="step-circle">01</div>初步諮詢</div>
-    <div><div class="step-circle">02</div>文件審查</div>
-    <div><div class="step-circle">03</div>簽署委任</div>
-    <div><div class="step-circle">04</div>送件辦理</div>
-    <div><div class="step-circle">05</div>完成交付</div>
+<section id="pricing">
+  <div class="card">
+    <h2>費用說明</h2>
+    <p><strong>一般成屋簽約手續費</strong>：1,000 NTD / 次</p>
+    <p>＊雙北、桃園以外地區另酌收車馬費</p>
+
+    <div class="price-item">
+      <p><strong>預售屋換約簽約手續費</strong>：3,000 NTD / 次</p>
+      <p>＊陪同至建商處換約另加收 3,000 元</p>
+    </div>
+
+    <div class="price-item">
+      <p><strong>房地移轉登記（買賣／贈與）</strong>：14,000 NTD / 次</p>
+    </div>
   </div>
 </section>
 
 <section id="contact">
-  <h2>聯絡我們</h2>
-  <div class="contact-box">
-    <div class="card">
-      <p>📍 台北市士林區忠誠路二段10巷27弄8號</p>
-      <p>📞 0988-218-256</p>
-      <p>📧 l2000021227@yahoo.com.tw</p>
-      <p>🕘 週一至週五 09:00–18:00</p>
-    </div>
-
-    <div class="card">
-      <input placeholder="姓名">
-      <input placeholder="電話">
-      <input placeholder="Email">
-      <textarea placeholder="請簡述您的需求"></textarea>
-      <a class="btn" href="#">確認送出</a>
-    </div>
+  <div class="card">
+    <h2>聯絡我們</h2>
+    <p>📍 臺北市士林區忠誠路二段10巷27弄8號</p>
+    <p>📞 +886 988 218 256</p>
+    <p>📧 l2000021227@yahoo.com.tw</p>
   </div>
 </section>
 
 <footer>
-  <div class="grid">
-    <div>
-      <h4>筑邦地政事務所</h4>
-      <p>專業地政登記服務，守護您的不動產權益。</p>
-    </div>
-    <div>
-      <h4>服務項目</h4>
-      <p>買賣・繼承・贈與・抵押</p>
-    </div>
-    <div>
-      <h4>聯絡資訊</h4>
-      <p>台北士林<br>0988-218-256</p>
-    </div>
-  </div>
+  © 2026 筑邦地政事務所 All rights reserved.
 </footer>
 
 </body>
